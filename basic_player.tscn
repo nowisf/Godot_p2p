@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://fiqyiblfdwii"]
+
+[ext_resource type="Script" path="res://basic_player.gd" id="1_rk03j"]
+[ext_resource type="Texture2D" uid="uid://t26bxbmsl5qg" path="res://pelota.png" id="2_v4c7e"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_p7s8n"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="basic_player" type="CharacterBody2D"]
+script = ExtResource("1_rk03j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v4c7e")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_p7s8n")
