@@ -3,7 +3,7 @@ extends Node2D
 var peer = ENetMultiplayerPeer.new()
 @export var player_scene : PackedScene
 const PORT = 135
- 
+
 
 func _on_host_pressed() -> void:
 	peer.create_server(PORT)
